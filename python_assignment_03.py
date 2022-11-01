@@ -16,8 +16,8 @@ from abc import ABC, abstractmethod
 
 
 class Product:
-    product_name = ''
-    product_id = ''
+    product_name = 'Dettol'
+    product_id = 2566993
 
 
 class ProductAbstract(ABC):
@@ -30,7 +30,7 @@ class ProductAbstract(ABC):
         pass
 
     @abstractmethod
-    def get_product_by_id(self, product_id: str):
+    def get_product_by_id(self, product_id: int):
         pass
 
     @abstractmethod
@@ -48,23 +48,28 @@ class ProductAbstract(ABC):
 
 class ProductManager(ProductAbstract):
     def create_product(self, product: Product):
-        print("User Information")
+        print(f"Product Name: Dettol")
 
     def edit_product(self):
-        print("")
+        print("Try to edit this product")
 
-    def get_product_by_id(self, product_ id):
-        print("Hello world")
+    def get_product_by_id(self, product_id):
+        print("Product id: 56555")
 
     def get_all_products(self):
-        print("Hello, dark planet")
+        print("List all products")
 
     def upload_product_image(self):
-        print("")
+        print("Insert Image here")
 
     def delete_product(self):
-        print("")
+        print("Delete product")
 
 
 productmanager = ProductManager()
+productmanager.create_product("Dettol")
+productmanager.edit_product()
+productmanager.get_product_by_id(product_id=56555)
 productmanager.get_all_products()
+productmanager.upload_product_image()
+productmanager.delete_product()
